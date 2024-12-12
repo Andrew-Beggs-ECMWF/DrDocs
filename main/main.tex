@@ -1,0 +1,40 @@
+\documentclass[techmemo]{ecmwfrep}%
+\title{DrHook: An In Depth Analysis} % title of techmemo
+% \headertitle{Optional shorter title} % optional shorter title for headings
+\coverauthor{Andrew Beggs\\(Computing Department)} % author(s)
+\seriesnumber{Not Published} % please ask the library for your TM number
+% \date{February 2021} % optional date
+% If necessary, place your own commands here:
+\usepackage{subcaption}
+\usepackage{todonotes}
+\usepackage{minted}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+\begin{document}
+\maketitle
+\input{abstract/abstract.tex}
+
+\begin{center}
+\vspace{8em}
+\includegraphics{img/DrHookLogo.png}    
+\end{center}
+
+\newpage
+\tableofcontents
+
+\newpage
+\input{intro/intro.tex}
+\newpage
+\input{content/flags/flags.tex}
+\newpage
+\input{content/definitions/definitions.tex}
+\newpage
+\input{content/global_variables/global_variables.tex}
+\newpage
+\input{content/functions/functions.tex}
+\newpage
+\input{appendix/appendix.tex}
+
+
+\end{document}

@@ -1,0 +1,125 @@
+\section{Definitions}
+
+\subsection{\texttt{\_DRHOOK\_C\_}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\texttt{1}
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+\todo{Unknown} Never used within \texttt{drhook.c}
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+None
+
+% ###############################################
+
+\subsection{\texttt{\_DRHOOK\_FILE\_}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\texttt{"drhook.c"}
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+Used within error handling to specify the source file where it occurred.
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+None
+
+% ###############################################
+
+\subsection{\texttt{\_GNU\_SOURCE}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+No value defined
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+\todo{Unknown} Never used within \texttt{drhook.c}
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+None
+
+% ###############################################
+
+\subsection{\texttt{HOST\_NAME\_MAX}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\verb|_POSIX_HOST_NAME_MAX|
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+Used to set the max size of char arrays for node HOSTNAME
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+\verb|!defined(HOST_NAME_MAX) && defined(_POSIX_HOST_NAME_MAX)|
+
+% ###############################################
+
+\subsection{\texttt{HOST\_NAME\_MAX}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\verb|_SC_HOST_NAME_MAX|
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+Used to set the max size of char arrays for node HOSTNAME
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+\verb|!defined(HOST_NAME_MAX) && defined(_SC_HOST_NAME_MAX)|
+
+% ###############################################
+
+\subsection{\texttt{EC\_HOST\_NAME\_MAX}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\verb|HOST_NAME_MAX|
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+Used to set the max size of char arrays for node HOSTNAME
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+\verb|defined(HOST_NAME_MAX)|
+
+% ###############################################
+
+\subsection{\texttt{EC\_HOST\_NAME\_MAX}}
+\vspace{-2ex}
+\subsubsection{Value}
+\vspace{-2ex}
+\texttt{512}
+
+\vspace{-2ex}
+\subsubsection{Purpose}
+\vspace{-2ex}
+Used to set the max size of char arrays for node HOSTNAME
+
+\vspace{-2ex}
+\subsubsection{Preprocessor Guards}
+\vspace{-2ex}
+\verb|!defined(HOST_NAME_MAX)|
