@@ -1,0 +1,27 @@
+%CM
+\@ifundefined{pdfoutput}%
+  {\let\pdfoutput\@undefined
+    \ExecuteOptions{dvips}%
+    \AtEndOfPackage{%
+      \@ifundefined{DeclareGraphicsRule}%
+        {\let\DeclareGraphicsRule\@undefined}%
+        {\DeclareGraphicsRule{.pz}{eps}{.bb}{}%
+         \DeclareGraphicsRule{.eps.Z}{eps}{.eps.bb}{`uncompress #1}%
+         \DeclareGraphicsRule{.ps.Z}{eps}{.ps.bb}{`uncompress #1}%
+         \DeclareGraphicsRule{.ps.gz}{eps}{.ps.bb}{`gunzip -c #1}%
+         \DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{`gunzip -c #1}}}%
+  }%
+  {\ifcase\pdfoutput
+      \let\pdfoutput\@undefined
+      \ExecuteOptions{dvips}%
+      \AtEndOfPackage{%
+        \@ifundefined{DeclareGraphicsRule}%
+          {\let\DeclareGraphicsRule\@undefined}%
+          {\DeclareGraphicsRule{.pz}{eps}{.bb}{}%
+           \DeclareGraphicsRule{.eps.Z}{eps}{.eps.bb}{`uncompress #1}%
+           \DeclareGraphicsRule{.ps.Z}{eps}{.ps.bb}{`uncompress #1}%
+           \DeclareGraphicsRule{.ps.gz}{eps}{.ps.bb}{`gunzip -c #1}%
+           \DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{`gunzip -c #1}}}%
+   \else
+      \ExecuteOptions{pdftex}
+   \fi}%
