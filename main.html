@@ -119,8 +119,8 @@ size is truncated at the first occurring suffix.
 </p><!-- l. 81 --><p class='noindent'>If <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>signal</code></span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>NSIG</code></span>, then it is registered to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook </span>- unless it has been
 set to ignored by <a href='#x1-28r5'><span class='pcrr7t-x-x-109'>"DR_HOOK_IGNORE_SIGNALS"</span></a>. <span class='obeylines-h'><code class='verb'>NSIG</code></span> is defined in <span class='ptmri7t-x-x-109'>signal.h </span>and is system
 dependant.
-</p><!-- l. 84 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are registered to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook</span>. Any
-value after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
+</p><!-- l. 84 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are registered to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook</span>. Any
+value after <span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
 </p><!-- l. 86 --><p class='noindent'>All other values will be silently discarded.
 </p><!-- l. 88 --><p class='noindent' id='not-tested2'><a id='likesection.3'></a><a id='x1-20x3'></a><a id='x1-21'></a><img alt='
 ' src='main6x.svg' /><span class='marginpar'><img alt='Not tested
@@ -146,8 +146,8 @@ value after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-1
 <a id='Q1-1-0'></a>
 </p><!-- l. 111 --><p class='noindent'>If <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>signal</code></span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>NSIG</code></span>, then it’s default signal handler is restored - unless it has been set to ignored by
 <a href='#x1-28r5'><span class='pcrr7t-x-x-109'>"DR_HOOK_IGNORE_SIGNALS"</span></a>. <span class='obeylines-h'><code class='verb'>NSIG</code></span> is defined in <span class='ptmri7t-x-x-109'>signal.h </span>and is system dependant.
-</p><!-- l. 114 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals have their default signal handler restored. Any value after
-<span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
+</p><!-- l. 114 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals have their default signal handler restored. Any value after
+<span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
 </p><!-- l. 116 --><p class='noindent'>All other values will be silently discarded.
 </p><!-- l. 118 --><p class='noindent' id='not-tested3'><a id='likesection.4'></a><a id='x1-26x4'></a><a id='x1-27'></a><img alt='
 ' src='main9x.svg' /><span class='marginpar'><img alt='Not tested
@@ -177,8 +177,8 @@ occur.
 <a id='Q1-1-0'></a>
 </p><!-- l. 141 --><p class='noindent'>If <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>signal</code></span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>NSIG</code></span>, then it’s set to inactive and ignored by <span class='ptmri7t-x-x-109'>DrHook</span>. <span class='obeylines-h'><code class='verb'>NSIG</code></span> is defined in <span class='ptmri7t-x-x-109'>signal.h </span>and is
 system dependant.
-</p><!-- l. 143 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are set to inactive and be ignored by <span class='ptmri7t-x-x-109'>DrHook</span>. Any value
-after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
+</p><!-- l. 143 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are set to inactive and be ignored by <span class='ptmri7t-x-x-109'>DrHook</span>. Any value
+after <span class='zptmcm7y-x-x-109'>-</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
 </p><!-- l. 145 --><p class='noindent'>All other values will be silently discarded.
 </p><!-- l. 147 --><p class='noindent' id='not-tested4'><a id='likesection.5'></a><a id='x1-32x5'></a><a id='x1-33'></a><img alt='
 ' src='main12x.svg' /><span class='marginpar'><img alt='Not tested
