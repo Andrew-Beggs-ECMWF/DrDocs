@@ -50,6 +50,7 @@
 </p><!-- l. 18 --><p class='noindent'>This is done by enabling <span class='pcrr7t-x-x-109'>OML_DEBUG </span>in the <span class='ptmri7t-x-x-109'>OML </span>library, initialising a new lockid, and then restoring the
 original value.
 </p><!-- l. 20 --><p class='noindent'>This debug info takes the following format:<br class='newline' /><span class='obeylines-h'><code class='verb'>oml_init_lockid_with_name "</code></span><span class='ptmri7t-x-x-109'>lock_name</span><span class='obeylines-h'><code class='verb'>" : </code></span><span class='ptmri7t-x-x-109'>lock_ID</span><span class='obeylines-h'><code class='verb'>, </code></span><span class='ptmri7t-x-x-109'>lock_address</span>
+</p><!-- l. 23 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 27 --><p class='noindent'>
 <a id='x1-8r2'></a>
 </p><!-- l. 27 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.2  </span><span class='pcrb7t-x-x-120'>"OMP_STACKSIZE"</span>
@@ -60,9 +61,6 @@ original value.
 <a id='Q1-1-0'></a>
 </p><!-- l. 32 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;number&gt; &lt;suffix&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>number ::= &lt;digit&gt; | &lt;number&gt; &lt;digit&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>suffix ::= ’’ | ’G’ | ’M’ | ’K’</code></span>
 </p><!-- l. 38 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-10r2'></a>
 </p><!-- l. 38 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.2.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -81,6 +79,7 @@ the stack size is in bytes. If multiple suffixes are specified, then the largest
 size is truncated at the first occurring suffix.
 </p><!-- l. 53 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>long long int</code></span>.
 </p><!-- l. 55 --><p class='noindent'>An invalid or negative input size will result in a default of <span class='pcrr7t-x-x-109'>0</span>.
+</p><!-- l. 57 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 61 --><p class='noindent'>
 <a id='x1-12r3'></a>
 </p><!-- l. 61 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.3  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_CATCH_SIGNALS"</span>
@@ -93,13 +92,13 @@ size is truncated at the first occurring suffix.
 </p><!-- l. 74 --><p class='noindent'>
 <a id='x1-14r2'></a>
 </p><!-- l. 74 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.3.2  Purpose</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 76 --><p class='noindent'>Specifies a list of signals to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook</span>.
 </p><!-- l. 79 --><p class='noindent'>
 <a id='x1-15r3'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 79 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.3.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 81 --><p class='noindent'>If <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>signal</code></span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>NSIG</code></span>, then it is registered to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook </span>- unless it has been
@@ -108,6 +107,7 @@ dependant.
 </p><!-- l. 84 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are registered to be caught and handled by <span class='ptmri7t-x-x-109'>DrHook</span>. Any
 value after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
 </p><!-- l. 86 --><p class='noindent'>All other values will be silently discarded.
+</p><!-- l. 88 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 92 --><p class='noindent'>
 <a id='x1-16r4'></a>
 </p><!-- l. 92 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.4  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_RESTORE_DEFAULT_SIGNALS"</span>
@@ -130,13 +130,14 @@ value after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-1
 <a href='#x1-20r5'><span class='pcrr7t-x-x-109'>"DR_HOOK_IGNORE_SIGNALS"</span></a>. <span class='obeylines-h'><code class='verb'>NSIG</code></span> is defined in <span class='ptmri7t-x-x-109'>signal.h </span>and is system dependant.
 </p><!-- l. 114 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals have their default signal handler restored. Any value after
 <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
-</p><!-- l. 116 --><p class='noindent'>All other values will be silently discarded.
-</p><!-- l. 122 --><p class='noindent'>
-<a id='x1-20r5'></a>
-</p><!-- l. 122 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.5  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_IGNORE_SIGNALS"</span>
                                                                                        
 
                                                                                        
+</p><!-- l. 116 --><p class='noindent'>All other values will be silently discarded.
+</p><!-- l. 118 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 122 --><p class='noindent'>
+<a id='x1-20r5'></a>
+</p><!-- l. 122 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.5  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_IGNORE_SIGNALS"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 125 --><p class='noindent'>
 <a id='x1-21r1'></a>
@@ -158,11 +159,15 @@ system dependant.
 </p><!-- l. 143 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>signal</code></span> <span class='zptmcm7t-x-x-109'>= </span><span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1</span>, then all available catchable signals are set to inactive and be ignored by <span class='ptmri7t-x-x-109'>DrHook</span>. Any value
 after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 </span>will be discarded.
 </p><!-- l. 145 --><p class='noindent'>All other values will be silently discarded.
+</p><!-- l. 147 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 151 --><p class='noindent'>
 <a id='x1-24r6'></a>
 </p><!-- l. 151 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.6  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_SILENT"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 153 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-25r1'></a>
 </p><!-- l. 153 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.6.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -171,15 +176,13 @@ after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 
 <a id='x1-26r2'></a>
 </p><!-- l. 158 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.6.2  Purpose</span>
 <a id='Q1-1-0'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 160 --><p class='noindent'>Used to enable or disable debug prints to <span class='obeylines-h'><code class='verb'>STDERR</code></span>.
 </p><!-- l. 163 --><p class='noindent'>
 <a id='x1-27r3'></a>
 </p><!-- l. 163 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.6.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 165 --><p class='noindent'>This is not recommended during production run due to the excessive slowdown caused by printing.
+</p><!-- l. 167 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 171 --><p class='noindent'>
 <a id='x1-28r7'></a>
 </p><!-- l. 171 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.7  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_INIT_SIGNALS"</span>
@@ -198,7 +201,12 @@ after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 
 <a id='x1-31r3'></a>
 </p><!-- l. 184 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.7.3  Notes</span>
 <a id='Q1-1-0'></a>
+</p><!-- l. 186 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 188 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 192 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-32r8'></a>
 </p><!-- l. 192 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.8  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_SHOW_PROCESS_OPTIONS"</span>
 <a id='Q1-1-0'></a>
@@ -208,13 +216,10 @@ after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 
 <a id='Q1-1-0'></a>
 </p><!-- l. 197 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;number&gt; | ’-1’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>number ::= &lt;digit&gt; | &lt;number&gt; &lt;digit&gt; | &lt;number&gt; ’0’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 202 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-34r2'></a>
 </p><!-- l. 202 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.8.2  Purpose</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 204 --><p class='noindent'>Specifies processIDs for which all options will be output .
+</p><!-- l. 204 --><p class='noindent'>Specifies processIDs for which all options will be output __________________________________________________________________________.
 </p><!-- l. 207 --><p class='noindent'>
 <a id='x1-35r3'></a>
 </p><!-- l. 207 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.8.3  Notes</span>
@@ -222,6 +227,7 @@ after <span class='zptmcm7y-x-x-109'>−</span><span class='zptmcm7t-x-x-109'>1 
 </p><!-- l. 209 --><p class='noindent'>If this option isn’t specified, and <a href='#x1-24r6'><span class='pcrr7t-x-x-109'>DR_HOOK_SILENT</span></a> doesn’t evaluate to <span class='obeylines-h'><code class='verb'>True</code></span>, then this will default to the
 process with ID <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 211 --><p class='noindent'>Specifying <span class='obeylines-h'><code class='verb'>-1</code></span> will enable this for all processes.
+</p><!-- l. 213 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 217 --><p class='noindent'>
 <a id='x1-36r9'></a>
 </p><!-- l. 217 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.9  </span><span class='pcrb7t-x-x-120'>"ATP_ENABLED"</span>
@@ -237,6 +243,9 @@ process with ID <span class='obeylines-h'><code class='verb'>1</code></span>.
 <a id='Q1-1-0'></a>
 </p><!-- l. 227 --><p class='noindent'>Enable  <a href='https://cpe.ext.hpe.com/docs/debugging-tools/atp.1.html'>Abnormal Termination Processing (<span class='ptmri7t-x-x-109'>ATP</span>) mode for <span class='ptmri7t-x-x-109'>Cray </span>systems</a>. This will pass certain signals to <span class='ptmri7t-x-x-109'>ATP</span>
 instead of <span class='ptmri7t-x-x-109'>DrHook</span>.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 230 --><p class='noindent'>
 <a id='x1-39r3'></a>
 </p><!-- l. 230 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.9.3  Notes</span>
@@ -247,9 +256,6 @@ instead of <span class='ptmri7t-x-x-109'>DrHook</span>.
      <li class='itemize'><span class='ptmri7t-x-x-109'>ATP_MAX_CORES</span>
      </li>
      <li class='itemize'><span class='ptmri7t-x-x-109'>ATP_MAX_ANALYSIS_TIME</span>
-                                                                                       
-
-                                                                                       
      </li>
      <li class='itemize'><span class='ptmri7t-x-x-109'>ATP_IGNORE_SIGTERM</span></li></ul>
 <!-- l. 241 --><p class='noindent'>The signals passed to ATP are: </p>
@@ -265,6 +271,9 @@ instead of <span class='ptmri7t-x-x-109'>DrHook</span>.
      <li class='itemize'><span class='pcrr7t-x-x-109'>SIGABRT</span>
      </li>
      <li class='itemize'><span class='pcrr7t-x-x-109'>SIGBUS</span>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'><span class='pcrr7t-x-x-109'>SIGSEGV</span>
      </li>
@@ -276,13 +285,11 @@ instead of <span class='ptmri7t-x-x-109'>DrHook</span>.
      </li>
      <li class='itemize'>
      <!-- l. 253 --><p class='noindent'><span class='pcrr7t-x-x-109'>SIGTERM</span></p>
-                                                                                       
-
-                                                                                       
           <ul class='itemize2'>
           <li class='itemize'><span class='pcrr7t-x-x-109'>SIGTERM </span>is only passed to ATP if <a href='#x1-48r12'><span class='pcrr7t-x-x-109'>ATP_IGNORE_SIGTERM</span></a> is set</li></ul>
      </li></ul>
-<!-- l. 263 --><p class='noindent'>
+<!-- l. 259 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 263 --><p class='noindent'>
 <a id='x1-40r10'></a>
 </p><!-- l. 263 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.10  </span><span class='pcrb7t-x-x-120'>"ATP_MAX_CORES"</span>
 <a id='Q1-1-0'></a>
@@ -297,6 +304,9 @@ instead of <span class='ptmri7t-x-x-109'>DrHook</span>.
 <a id='Q1-1-0'></a>
 </p><!-- l. 275 --><p class='noindent'>Used as a multiplier for calculating the spin wait time for all cores to dump if <span class='ptmri7t-x-x-109'>ATP </span>is enabled and handling
 signals.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 277 --><p class='noindent'>Also used along with <a href='#x1-36r9'><span class='pcrr7t-x-x-109'>ATP_ENABLED</span></a> to determine if any cores are being dumped by <span class='ptmri7t-x-x-109'>ATP</span>.
 </p><!-- l. 280 --><p class='noindent'>
 <a id='x1-43r3'></a>
@@ -306,14 +316,12 @@ signals.
 to <span class='pcrr7t-x-x-109'>20</span>.
 </p><!-- l. 284 --><p class='noindent'>This will only be enable if the <a href='#x1-36r9'><span class='pcrr7t-x-x-109'>ATP_ENABLED</span></a> flag evaluates to <span class='obeylines-h'><code class='verb'>True</code></span>.
 </p><!-- l. 286 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
+</p><!-- l. 288 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 292 --><p class='noindent'>
 <a id='x1-44r11'></a>
 </p><!-- l. 292 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.11  </span><span class='pcrb7t-x-x-120'>"ATP_MAX_ANALYSIS_TIME"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 295 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-45r1'></a>
 </p><!-- l. 295 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.11.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -336,6 +344,7 @@ to <span class='pcrr7t-x-x-109'>300</span>.
 handling a signal, through the following:
 </p><!-- l. 315 --><p class='noindent'><span class='obeylines-h'><code class='verb'>int secs = MIN(drhook_harakiri_timeout,atp_max_analysis_time);</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>secs = 60 + MIN(tdiff * (atp_max_cores-1),secs);</code></span>
 </p><!-- l. 318 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
+</p><!-- l. 320 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 324 --><p class='noindent'>
 <a id='x1-48r12'></a>
 </p><!-- l. 324 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.12  </span><span class='pcrb7t-x-x-120'>"ATP_IGNORE_SIGTERM"</span>
@@ -349,9 +358,6 @@ handling a signal, through the following:
 <a id='x1-50r2'></a>
 </p><!-- l. 332 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.12.2  Purpose</span>
 <a id='Q1-1-0'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 334 --><p class='noindent'>Determines if <span class='pcrr7t-x-x-109'>SIGTERM </span>should be handled by <span class='ptmri7t-x-x-109'>DrHook </span>or <span class='ptmri7t-x-x-109'>ATP</span>.
 </p><!-- l. 337 --><p class='noindent'>
 <a id='x1-51r3'></a>
@@ -360,6 +366,7 @@ handling a signal, through the following:
 </p><!-- l. 339 --><p class='noindent'>This is an overloaded environment variable, used primarily for <span class='ptmri7t-x-x-109'>ATP</span>. If nothing is specified, then this will default
 to <span class='pcrr7t-x-x-109'>0</span>.
 </p><!-- l. 341 --><p class='noindent'>This will only be enable if the <a href='#x1-36r9'><span class='pcrr7t-x-x-109'>ATP_ENABLED</span></a> flag evaluates to <span class='obeylines-h'><code class='verb'>True</code></span>.
+</p><!-- l. 343 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 347 --><p class='noindent'>
 <a id='x1-52r13'></a>
 </p><!-- l. 347 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.13  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_ALLOW_COREDUMP"</span>
@@ -370,6 +377,9 @@ to <span class='pcrr7t-x-x-109'>0</span>.
 <a id='Q1-1-0'></a>
 </p><!-- l. 352 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;number&gt; | ’-1’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>number ::= &lt;digit&gt; | &lt;number&gt; &lt;digit&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 357 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-54r2'></a>
 </p><!-- l. 357 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.13.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -382,14 +392,12 @@ to <span class='pcrr7t-x-x-109'>0</span>.
 process has core dumping enabled.
 </p><!-- l. 367 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>DR_HOOK_ALLOW_COREDUMP </span>evaluates to -1 then core dumping is enabled for all processes.
 </p><!-- l. 369 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>DR_HOOK_ALLOW_COREDUMP </span>evaluates to 0 then core dumping is disabled.
+</p><!-- l. 372 --><p class='noindent'>___________________________________________ ___________________________________________________________________________________
 </p><!-- l. 377 --><p class='noindent'>
 <a id='x1-56r14'></a>
 </p><!-- l. 377 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.14  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_PROFILE"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 380 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-57r1'></a>
 </p><!-- l. 380 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.14.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -402,11 +410,15 @@ process has core dumping enabled.
 <a id='Q1-1-0'></a>
 </p><!-- l. 400 --><p class='noindent'>Specifies where to output profiles.
 </p><!-- l. 403 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-59r3'></a>
 </p><!-- l. 403 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.14.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 405 --><p class='noindent'>While <span class='pcrr7t-x-x-109'>DR_HOOK_PROFILE </span>is just to be a valid file name, many of the valid symbols are not recommended for
 obvious reasons.
+</p><!-- l. 407 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 409 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>DR_HOOK_PROFILE </span>doesn’t contain the character <span class='pcrr7t-x-x-109'>%</span>, then <span class='pcrr7t-x-x-109'>.%d </span>will be appended.
 </p><!-- l. 411 --><p class='noindent'>If <a href='#x1-60r15'><span class='pcrr7t-x-x-109'>"DR_HOOK_PROFILE_PROC"</span></a> is set and valid, but <span class='pcrr7t-x-x-109'>"DR_HOOK_PROFILE" </span>is not set, then
 <br class='newline' /><span class='pcrr7t-x-x-109'>"DR_HOOK_PROFILE" </span>defaults to <span class='obeylines-h'><code class='verb'>drhook.prof.%d</code></span>.
@@ -415,12 +427,10 @@ default to <span class='obeylines-h'><code class='verb'>drhook.prof.0</code></sp
 </p><!-- l. 415 --><p class='noindent'><span class='pcrr7t-x-x-109'>"DR_HOOK_PROFILE" </span>is also indirectly used in <span class='pcrr7t-x-x-109'>get_memmon_out</span>. <span class='obeylines-h'><code class='verb'>-mem</code></span> is simply appended to the
 previously described path.
 </p><!-- l. 417 --><p class='noindent'>This option is only used in profiling and memory profiling modes.
+</p><!-- l. 419 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 423 --><p class='noindent'>
 <a id='x1-60r15'></a>
 </p><!-- l. 423 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.15  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_PROFILE_PROC"</span>
-                                                                                       
-
-                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 426 --><p class='noindent'>
 <a id='x1-61r1'></a>
@@ -438,9 +448,13 @@ previously described path.
 <a id='Q1-1-0'></a>
 </p><!-- l. 440 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_PROFILE_PROC" </span>is <span class='obeylines-h'><code class='verb'>-1</code></span>, then all processes will out profiling data. All other valid values will
 result in the one specified process outputting its data.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 442 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>-1</code></span>.
 </p><!-- l. 444 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>double</code></span>.
 </p><!-- l. 446 --><p class='noindent'>This option is only used in profiling and memory profiling modes.
+</p><!-- l. 448 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 452 --><p class='noindent'>
 <a id='x1-64r16'></a>
 </p><!-- l. 452 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.16  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_PROFILE_LIMIT"</span>
@@ -454,9 +468,6 @@ result in the one specified process outputting its data.
 <a id='x1-66r2'></a>
 </p><!-- l. 462 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.16.2  Purpose</span>
 <a id='Q1-1-0'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 464 --><p class='noindent'>Specifies at which percentage of the maximum value data points should be dropped from profiling
 outputs.
 </p><!-- l. 467 --><p class='noindent'>
@@ -465,7 +476,7 @@ outputs.
 <a id='Q1-1-0'></a>
 </p><!-- l. 469 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>-10</code></span>.
 </p><!-- l. 471 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>double</code></span>.
-</p><!-- l. 473 --><p class='noindent'>This option is only used in profiling and memory profiling modes.
+</p><!-- l. 473 --><p class='noindent'>This option is only used in profiling and memory profiling modes. ____________________________________________________________
 </p><!-- l. 479 --><p class='noindent'>
 <a id='x1-68r17'></a>
 </p><!-- l. 479 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.17  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_FUNCENTER"</span>
@@ -474,6 +485,9 @@ outputs.
 <a id='x1-69r1'></a>
 </p><!-- l. 482 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.17.1  Valid Values</span>
 <a id='Q1-1-0'></a>
+                                                                                       
+
+                                                                                       
 </p><!-- l. 484 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;digit&gt; | &lt;valid_value&gt; &lt;digit&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 488 --><p class='noindent'>
 <a id='x1-70r2'></a>
@@ -487,14 +501,12 @@ outputs.
 </p><!-- l. 495 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
 </p><!-- l. 497 --><p class='noindent'>This will also set <span class='pcrr7t-x-x-109'>opt_gethwm </span>and <span class='pcrr7t-x-x-109'>opt_getstk </span>to <span class='obeylines-h'><code class='verb'>1</code></span>, that are usually handled by <a href='#x1-188r47'><span class='pcrr7t-x-x-109'>"DR_HOOK_OPT"</span></a>.
 </p><!-- l. 499 --><p class='noindent'>To see when a process exits a function, use <a href='#x1-72r18'><span class='pcrr7t-x-x-109'>"DR_HOOK_FUNCEXIT"</span></a>.
+</p><!-- l. 501 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 505 --><p class='noindent'>
 <a id='x1-72r18'></a>
 </p><!-- l. 505 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.18  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_FUNCEXIT"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 508 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-73r1'></a>
 </p><!-- l. 508 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.18.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -511,6 +523,10 @@ outputs.
 </p><!-- l. 521 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
 </p><!-- l. 523 --><p class='noindent'>This will also set <span class='pcrr7t-x-x-109'>opt_gethwm </span>and <span class='pcrr7t-x-x-109'>opt_getstk </span>to <span class='obeylines-h'><code class='verb'>1</code></span>, that are usually handled by <a href='#x1-188r47'><span class='pcrr7t-x-x-109'>"DR_HOOK_OPT"</span></a>.
 </p><!-- l. 525 --><p class='noindent'>To see when a process enters a function, use <a href='#x1-68r17'><span class='pcrr7t-x-x-109'>"DR_HOOK_FUNCENTER"</span></a>.
+                                                                                       
+
+                                                                                       
+</p><!-- l. 527 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 531 --><p class='noindent'>
 <a id='x1-76r19'></a>
 </p><!-- l. 531 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.19  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE"</span>
@@ -529,9 +545,6 @@ outputs.
 <a id='x1-79r3'></a>
 </p><!-- l. 546 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.19.3  Notes</span>
 <a id='Q1-1-0'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 548 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE" </span>is <span class='obeylines-h'><code class='verb'>-1</code></span>, then all processes will have timeline mode enabled. All other non-zero valid
 values will result in the one specified process having timeline mode enabled.
 </p><!-- l. 550 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
@@ -547,7 +560,8 @@ values will result in the one specified process having timeline mode enabled.
      <li class='itemize'><a href='#x1-92r23'><span class='pcrr7t-x-x-109'>DR_HOOK_TIMELINE_FREQ</span></a>
      </li>
      <li class='itemize'><a href='#x1-96r24'><span class='pcrr7t-x-x-109'>DR_HOOK_TIMELINE_MB</span></a></li></ul>
-<!-- l. 565 --><p class='noindent'>
+<!-- l. 561 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 565 --><p class='noindent'>
 <a id='x1-80r20'></a>
 </p><!-- l. 565 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.20  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE_THREAD"</span>
 <a id='Q1-1-0'></a>
@@ -562,22 +576,23 @@ values will result in the one specified process having timeline mode enabled.
 <a id='Q1-1-0'></a>
 </p><!-- l. 577 --><p class='noindent'>Used to specify which threads should output timeline info upon entry and exit of a region.
 </p><!-- l. 581 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-83r3'></a>
 </p><!-- l. 581 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.20.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 583 --><p class='noindent'>If timeline mode is enabled via <a href='#x1-76r19'><span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE"</span></a>, then for all threads in the range <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>→ </span><span class='zptmcm7m-x-x-109'>n </span>(inclusive)
 <span class='ptmri7t-x-x-109'>DrHook </span>will print timeline information on both entry and exit from a region. <span class='ptmri7t-x-x-109'>DrHook </span>will also print the sum of
-<span class='ptmri7t-x-x-109'>all threads </span>for the first thread.
+<span class='ptmri7t-x-x-109'>all threads </span>for the first thread.______________________________________________________________________________________________________________________
 </p><!-- l. 585 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE_THREAD" </span>is set to <span class='obeylines-h'><code class='verb'>0</code></span>, then all n will be set so as to cover all threads and the
 behaviour is identical to the above.
 </p><!-- l. 590 --><p class='noindent'>While not strictly valid, any value less than <span class='obeylines-h'><code class='verb'>0</code></span> will have the same behaviour as <span class='obeylines-h'><code class='verb'>0</code></span>.
 </p><!-- l. 592 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 594 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 598 --><p class='noindent'>
 <a id='x1-84r21'></a>
 </p><!-- l. 598 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.21  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE_FORMAT"</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 601 --><p class='noindent'>
 <a id='x1-85r1'></a>
@@ -600,10 +615,8 @@ behaviour is identical to the above.
 </p><!-- l. 622 --><p class='noindent'><span class='obeylines-h'><code class='verb'>"wall=%.6f cpu=%.4g hwm=%.4g rss=%.4g curheap=%.4g stack=%.4g</code></span>
 </p><!-- l. 624 --><p class='noindent'><span class='obeylines-h'><code class='verb'>vmpeak=%.4g pag=%lld"</code></span>
 </p><!-- l. 626 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 628 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 632 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-88r22'></a>
 </p><!-- l. 632 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.22  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE_UNITNO"</span>
 <a id='Q1-1-0'></a>
@@ -615,6 +628,9 @@ behaviour is identical to the above.
 </p><!-- l. 641 --><p class='noindent'>
 <a id='x1-90r2'></a>
 </p><!-- l. 641 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.22.2  Purpose</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 643 --><p class='noindent'>Specifies the unit number to be used for timeline output.
 </p><!-- l. 646 --><p class='noindent'>
@@ -628,6 +644,7 @@ standard input, 6 is standard output.
 are valid.
 </p><!-- l. 655 --><p class='noindent'>If <span class='obeylines-h'><code class='verb'>0</code></span> is specified, then timeline outputs are silently ignored.
 </p><!-- l. 657 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>6</code></span>.
+</p><!-- l. 659 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 663 --><p class='noindent'>
 <a id='x1-92r23'></a>
 </p><!-- l. 663 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.23  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE_FREQ"</span>
@@ -639,9 +656,6 @@ are valid.
 </p><!-- l. 668 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;digit&gt; | &lt;valid_value&gt; &lt;digit&gt; | &lt;valid_value&gt; ’0’</code></span>
 <br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 672 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-94r2'></a>
 </p><!-- l. 672 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.23.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -653,9 +667,13 @@ are valid.
 </p><!-- l. 680 --><p class='noindent'>This option is only available if timeline mode is enabled via <a href='#x1-76r19'><span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE"</span></a>.
 </p><!-- l. 682 --><p class='noindent'>If a region is entered/exited and it isn’t the nth call, but the resident set size does vary by more than
 <a href='#x1-96r24'><span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE_MB"</span></a>, then it is output anyway.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 684 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>1</code></span> will silently disable timeline mode.
 </p><!-- l. 686 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>long long int</code></span>.
 </p><!-- l. 688 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1000000</code></span>.
+</p><!-- l. 690 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 694 --><p class='noindent'>
 <a id='x1-96r24'></a>
 </p><!-- l. 694 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.24  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMELINE_MB"</span>
@@ -677,16 +695,17 @@ is overridden.
 <a id='Q1-1-0'></a>
 </p><!-- l. 712 --><p class='noindent'>This option is only available if timeline mode is enabled via <a href='#x1-76r19'><span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE"</span></a>.
 </p><!-- l. 714 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>0</code></span> will be set to <span class='obeylines-h'><code class='verb'>1.0</code></span>.
-                                                                                       
-
-                                                                                       
 </p><!-- l. 716 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>double</code></span>.
 </p><!-- l. 718 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1.0</code></span>.
+</p><!-- l. 720 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 724 --><p class='noindent'>
 <a id='x1-100r25'></a>
 </p><!-- l. 724 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.25  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TRACE_STACK"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 727 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-101r1'></a>
 </p><!-- l. 727 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.25.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -711,11 +730,9 @@ override this value.
 <span class='pcrr7t-x-x-109'>opt_random_memstat </span>is not set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 750 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>double</code></span>.
 </p><!-- l. 752 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 754 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 758 --><p class='noindent'>
 <a id='x1-104r26'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 758 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.26  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_RANDOM_MEMSTAT"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 761 --><p class='noindent'>
@@ -723,6 +740,9 @@ override this value.
 </p><!-- l. 761 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.26.1  Valid Values</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 763 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;digit&gt; | &lt;valid_value&gt; &lt;digit&gt; </code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
+                                                                                       
+
+                                                                                       
 </p><!-- l. 767 --><p class='noindent'>
 <a id='x1-106r2'></a>
 </p><!-- l. 767 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.26.2  Purpose</span>
@@ -742,6 +762,7 @@ times on average.
 </p><!-- l. 781 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>0</code></span> will be set to <span class='obeylines-h'><code class='verb'>0</code></span>, effectively disabling the feature.
 </p><!-- l. 783 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
 </p><!-- l. 785 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 787 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 791 --><p class='noindent'>
 <a id='x1-108r27'></a>
 </p><!-- l. 791 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.27  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_HASHBITS"</span>
@@ -752,12 +773,14 @@ times on average.
 <a id='Q1-1-0'></a>
 </p><!-- l. 796 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;digit&gt; | &lt;valid_value&gt; &lt;digit&gt; </code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 800 --><p class='noindent'>
+<a id='x1-110r2'></a>
+</p><!-- l. 800 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.27.2  Purpose</span>
+<a id='Q1-1-0'></a>
+</p><!-- l. 802 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 805 --><p class='noindent'>
                                                                                        
 
                                                                                        
-<a id='x1-110r2'></a>
-</p><!-- l. 800 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.27.2  Purpose</span>
-<a id='Q1-1-0'></a></p><!-- l. 805 --><p class='noindent'>
 <a id='x1-111r3'></a>
 </p><!-- l. 805 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.27.3  Notes</span>
 <a id='Q1-1-0'></a>
@@ -768,6 +791,7 @@ times on average.
 </p><!-- l. 817 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
 </p><!-- l. 819 --><p class='noindent'>If this option isn’t specified, then it will default to the definition of <span class='obeylines-h'><code class='verb'>NHASH</code></span>, typically <span class='obeylines-h'><code class='verb'>16</code></span>. As such, <span class='obeylines-h'><code class='verb'>hashsize</code></span>
 and <span class='obeylines-h'><code class='verb'>hashmask</code></span> default to <span class='pcrr7t-x-x-109'>65536 </span>and <span class='pcrr7t-x-x-109'>65535</span>, respectively.
+</p><!-- l. 821 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 825 --><p class='noindent'>
 <a id='x1-112r28'></a>
 </p><!-- l. 825 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.28  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_NCALLSTACK"</span>
@@ -780,22 +804,26 @@ and <span class='obeylines-h'><code class='verb'>hashmask</code></span> default 
 </p><!-- l. 834 --><p class='noindent'>
 <a id='x1-114r2'></a>
 </p><!-- l. 834 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.28.2  Purpose</span>
-<a id='Q1-1-0'></a></p><!-- l. 839 --><p class='noindent'>
+<a id='Q1-1-0'></a>
+</p><!-- l. 836 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 839 --><p class='noindent'>
 <a id='x1-115r3'></a>
 </p><!-- l. 839 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.28.3  Notes</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 849 --><p class='noindent'>This is an overloaded value with 2 functions. The first is to set the precision used by <span class='ptmri7t-x-x-109'>DrHook</span>, which also
-determines which method is used to X. A performance penalty is incurred when using the single precision mode
-(valid non-zero values), and so is not recommended.
+</p><!-- l. 849 --><p class='noindent'>This is an overloaded value with 2___________________________________________________________________ functions. The first is to set
+the precision used by <span class='ptmri7t-x-x-109'>DrHook</span>, which also determines which method is used to X. A performance
+penalty is incurred when using the single precision mode (valid non-zero values), and so is not
+recommended.
 </p><!-- l. 851 --><p class='noindent'>The second function of <span class='pcrr7t-x-x-109'>"DR_HOOK_NCALLSTACK"</span>, is to act as a parameter when in single precision mode.
+This parameter sets the maximum stack depth allowed. You must be careful when selecting this that a sufficient
                                                                                        
 
                                                                                        
-This parameter sets the maximum stack depth allowed. You must be careful when selecting this that a sufficient
 depth is chosen. If the depth is exceeded, then <span class='ptmri7t-x-x-109'>DrHook </span>will abort.
 </p><!-- l. 853 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>0</code></span> will be set to <span class='obeylines-h'><code class='verb'>0</code></span>, effectively selecting double precision.
 </p><!-- l. 855 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
 </p><!-- l. 857 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>, which enables double precision mode.
+</p><!-- l. 859 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 863 --><p class='noindent'>
 <a id='x1-116r29'></a>
 </p><!-- l. 863 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.29  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_HARAKIRI_TIMEOUT"</span>
@@ -826,11 +854,12 @@ following way to allow <span class='ptmri7t-x-x-109'>ATP </span>to dump cores:
 </p><!-- l. 894 --><p class='noindent'>The timeout is specified in seconds.
 </p><!-- l. 896 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>0</code></span> will be set to the definition of <span class='obeylines-h'><code class='verb'>drhook_harakiri_timeout_default</code></span>, typically
 <span class='obeylines-h'><code class='verb'>500</code></span>.
-</p><!-- l. 898 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
                                                                                        
 
                                                                                        
+</p><!-- l. 898 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
 </p><!-- l. 900 --><p class='noindent'>If this option isn’t specified, then it will default to the definition of <span class='obeylines-h'><code class='verb'>drhook_harakiri_timeout_default</code></span>.
+</p><!-- l. 902 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 906 --><p class='noindent'>
 <a id='x1-120r30'></a>
 </p><!-- l. 906 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.30  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_USE_LOCKFILE"</span>
@@ -851,24 +880,25 @@ first.
 </p><!-- l. 919 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.30.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 921 --><p class='noindent'>When enabled, this will enable a lockfile when handling signals in <span class='ptmri7t-x-x-109'>DrHook</span>. This lockfile, <span class='obeylines-h'><code class='verb'>"drhook_lock"</code></span>,
-will contain the number of the thread which got the lock first.
+will contain the number of the thread which got the lock first.____________________________________________________________________
 </p><!-- l. 923 --><p class='noindent'><span class='pcrr7t-x-x-109'>"DR_HOOK_USE_LOCKFILE" </span>having a value evaluating to <span class='pcrr7t-x-x-109'>1</span>, will also disable some output regarding the use
 of <a href='#x1-120r30'><span class='pcrr7t-x-x-109'>"DR_HOOK_USE_LOCKFILE"</span></a> in it’s alternative path for subsequent signals.
 </p><!-- l. 925 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 927 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 929 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 933 --><p class='noindent'>
 <a id='x1-124r31'></a>
 </p><!-- l. 933 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.31  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TRAPFPE"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 936 --><p class='noindent'>
 <a id='x1-125r1'></a>
+                                                                                       
+
+                                                                                       
 </p><!-- l. 936 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.31.1  Valid Values</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 938 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
 </p><!-- l. 941 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-126r2'></a>
 </p><!-- l. 941 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.31.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -878,9 +908,10 @@ of <a href='#x1-120r30'><span class='pcrr7t-x-x-109'>"DR_HOOK_USE_LOCKFILE"</spa
 </p><!-- l. 946 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.31.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 948 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_TRAPFPE" </span>evaluates to <span class='pcrr7t-x-x-109'>1</span>, then <span class='ptmri7t-x-x-109'>DrHook </span>will trap floating point exceptions regardless of
-compilation settings. A value of <span class='pcrr7t-x-x-109'>0 </span>will instead rely on the compiler flags used, e.g. <span class='pcrr7t-x-x-109'>-Ktrap=fp</span>.
+compilation settings. A value of <span class='pcrr7t-x-x-109'>0 </span>will instead rely on the compiler flags used, e.g. <span class='pcrr7t-x-x-109'>-Ktrap=fp</span>.___________
 </p><!-- l. 950 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 952 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 954 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 958 --><p class='noindent'>
 <a id='x1-128r32'></a>
 </p><!-- l. 958 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.32  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TRAPFPE_INVALID"</span>
@@ -902,13 +933,14 @@ compilation settings. A value of <span class='pcrr7t-x-x-109'>0 </span>will inst
 </p><!-- l. 973 --><p class='noindent'>This will only be enabled if <a href='#x1-124r31'><span class='pcrr7t-x-x-109'>"DR_HOOK_TRAPFPE"</span></a> evaluates to <span class='pcrr7t-x-x-109'>1 </span>or the compiler had trapping of floating
 point exceptions enabled.
 </p><!-- l. 975 --><p class='noindent'>These invalid operations are defined by IEEE 754 standard.
-</p><!-- l. 977 --><p class='noindent'>If the exception is not trapped, then the result of the operation is <span class='obeylines-h'><code class='verb'>NaN</code></span>.
-</p><!-- l. 979 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
-</p><!-- l. 981 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
-</p><!-- l. 987 --><p class='noindent'>
                                                                                        
 
                                                                                        
+</p><!-- l. 977 --><p class='noindent'>If the exception is not trapped, then the result of the operation is <span class='obeylines-h'><code class='verb'>NaN</code></span>.
+</p><!-- l. 979 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 981 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 983 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 987 --><p class='noindent'>
 <a id='x1-132r33'></a>
 </p><!-- l. 987 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.33  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TRAPFPE_DIVBYZERO"</span>
 <a id='Q1-1-0'></a>
@@ -931,6 +963,7 @@ point exceptions enabled.
 </p><!-- l. 1004 --><p class='noindent'>This exception occurs when a finite nonzero number is divided by zero.
 </p><!-- l. 1006 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1008 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 1010 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1014 --><p class='noindent'>
 <a id='x1-136r34'></a>
 </p><!-- l. 1014 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.34  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TRAPFPE_OVERFLOW"</span>
@@ -938,6 +971,9 @@ point exceptions enabled.
 </p><!-- l. 1017 --><p class='noindent'>
 <a id='x1-137r1'></a>
 </p><!-- l. 1017 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.34.1  Valid Values</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 1019 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
 </p><!-- l. 1022 --><p class='noindent'>
@@ -946,9 +982,6 @@ point exceptions enabled.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1024 --><p class='noindent'>Toggles whether overflow floating point exceptions should be trapped.
 </p><!-- l. 1027 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-139r3'></a>
 </p><!-- l. 1027 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.34.3  Notes</span>
 <a id='Q1-1-0'></a>
@@ -958,6 +991,7 @@ point exceptions enabled.
 format of the destination. This behaviour is affected by rounding modes.
 </p><!-- l. 1033 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1035 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>1</code></span>.
+</p><!-- l. 1037 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1041 --><p class='noindent'>
 <a id='x1-140r35'></a>
 </p><!-- l. 1041 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.35  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_TIMED_KILL"</span>
@@ -971,6 +1005,9 @@ format of the destination. This behaviour is affected by rounding modes.
 </p><!-- l. 1057 --><p class='noindent'>
 <a id='x1-142r2'></a>
 </p><!-- l. 1057 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.35.2  Purpose</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 1059 --><p class='noindent'>Set timers for specific, or all, threads to trigger signals. This is a developer option.
 </p><!-- l. 1062 --><p class='noindent'>
@@ -979,9 +1016,6 @@ format of the destination. This behaviour is affected by rounding modes.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1065 --><p class='noindent'>The parameters provided to <span class='pcrr7t-x-x-109'>"DR_HOOK_TIMED_KILL" </span>(<span class='obeylines-h'><code class='verb'>target_process</code></span>,<br class='newline' /><span class='obeylines-h'><code class='verb'>target_oml_thread_id</code></span>, <span class='obeylines-h'><code class='verb'>target_signal</code></span>, and <span class='obeylines-h'><code class='verb'>start_time</code></span>) are in the following pattern:
 </p><!-- l. 1067 --><p class='noindent'><span class='obeylines-h'><code class='verb'>target_process:target_oml_thread_id:target_signal:start_time</code></span>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 1069 --><p class='noindent'>Note that: </p>
      <ul class='itemize1'>
      <li class='itemize'><span class='obeylines-h'><code class='verb'>target_process</code></span> can be a valid integer for a single process, or <span class='pcrr7t-x-x-109'>-1 </span>for all.
@@ -994,6 +1028,7 @@ format of the destination. This behaviour is affected by rounding modes.
 <!-- l. 1076 --><p class='noindent'>Any set of parameters that are invalid, will be silently discarded.
 </p><!-- l. 1078 --><p class='noindent'>The timers will be started as part of <span class='ptmri7t-x-x-109'>DrHook’s </span>initialisation, and are specified in seconds.
 </p><!-- l. 1080 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>NULL</code></span>.
+</p><!-- l. 1082 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1086 --><p class='noindent'>
 <a id='x1-144r36'></a>
 </p><!-- l. 1086 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.36  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_DUMP_SMAPS"</span>
@@ -1004,6 +1039,9 @@ format of the destination. This behaviour is affected by rounding modes.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1091 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
 </p><!-- l. 1094 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-146r2'></a>
 </p><!-- l. 1094 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.36.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -1013,14 +1051,12 @@ a developer option.
 <a id='x1-147r3'></a>
 </p><!-- l. 1099 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.36.3  Notes</span>
 <a id='Q1-1-0'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 1102 --><p class='noindent'><span class='pcrr7t-x-x-109'>smaps </span>will be dumped after the first signal is handled by <span class='ptmri7t-x-x-109'>DrHook</span>, but before signals are handled by other
 handlers, e.g. <span class='ptmri7t-x-x-109'>ATP</span>. It will only be dumped for the process which raises the signal.
-</p><!-- l. 1104 --><p class='noindent'><span class='pcrr7t-x-x-109'>smaps </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/&lt;process_ID&gt;/smaps</code></span>.
+</p><!-- l. 1104 --><p class='noindent'><span class='pcrr7t-x-x-109'>smaps </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/&lt;process_ID&gt;/smaps</code></span>___________________________.
 </p><!-- l. 1106 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1108 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1110 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1114 --><p class='noindent'>
 <a id='x1-148r37'></a>
 </p><!-- l. 1114 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.37  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_DUMP_MAPS"</span>
@@ -1042,18 +1078,19 @@ developer option.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1129 --><p class='noindent'><span class='pcrr7t-x-x-109'>maps </span>will be dumped after the first signal is handled by <span class='ptmri7t-x-x-109'>DrHook</span>, but before signals are handled by other
 handlers, e.g. <span class='ptmri7t-x-x-109'>ATP</span>. It will only be dumped for the process which raises the signal.
-</p><!-- l. 1131 --><p class='noindent'><span class='pcrr7t-x-x-109'>maps </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/&lt;process_ID&gt;/maps</code></span>.
+</p><!-- l. 1131 --><p class='noindent'><span class='pcrr7t-x-x-109'>maps </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/&lt;process_ID&gt;/maps</code></span>_____________________________.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1133 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1135 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1137 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1141 --><p class='noindent'>
 <a id='x1-152r38'></a>
 </p><!-- l. 1141 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.38  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_DUMP_BUDDYINFO"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1144 --><p class='noindent'>
 <a id='x1-153r1'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 1144 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.38.1  Valid Values</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1146 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
@@ -1071,14 +1108,18 @@ option.
 handlers, e.g. <span class='ptmri7t-x-x-109'>ATP</span>.
 </p><!-- l. 1158 --><p class='noindent'><span class='pcrr7t-x-x-109'>buddyinfo </span>can also be dumped during the dumping of hugepages(enabled via <a href='#x1-160r40'><span class='pcrr7t-x-x-109'>"DR_HOOK_DUMP_HUGEPAGES"</span></a>).
 This occurs during the handling of signals, and when <span class='ptmri7t-x-x-109'>DrHook </span>enters a region.
-</p><!-- l. 1160 --><p class='noindent'><span class='pcrr7t-x-x-109'>buddyinfo </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/buddyinfo</code></span>.
+</p><!-- l. 1160 --><p class='noindent'><span class='pcrr7t-x-x-109'>buddyinfo </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/buddyinfo</code></span>________________________________.
 </p><!-- l. 1162 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1164 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1166 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1170 --><p class='noindent'>
 <a id='x1-156r39'></a>
 </p><!-- l. 1170 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.39  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_DUMP_MEMINFO"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1173 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-157r1'></a>
 </p><!-- l. 1173 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.39.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -1092,17 +1133,15 @@ option.
 </p><!-- l. 1183 --><p class='noindent'>
 <a id='x1-159r3'></a>
 </p><!-- l. 1183 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.39.3  Notes</span>
-                                                                                       
-
-                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 1185 --><p class='noindent'><span class='pcrr7t-x-x-109'>meminfo </span>will be dumped after the first signal is handled by <span class='ptmri7t-x-x-109'>DrHook</span>, but before signals are handled by other
 handlers, e.g. <span class='ptmri7t-x-x-109'>ATP</span>.
 </p><!-- l. 1187 --><p class='noindent'><span class='pcrr7t-x-x-109'>meminfo </span>can also be dumped during the dumping of hugepages (enabled via <a href='#x1-160r40'><span class='pcrr7t-x-x-109'>"DR_HOOK_DUMP_HUGEPAGES"</span></a>).
 This occurs during the handling of signals, and when <span class='ptmri7t-x-x-109'>DrHook </span>enters a region.
-</p><!-- l. 1189 --><p class='noindent'><span class='pcrr7t-x-x-109'>meminfo </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/meminfo</code></span>.
+</p><!-- l. 1189 --><p class='noindent'><span class='pcrr7t-x-x-109'>meminfo </span>will be dumped to <span class='obeylines-h'><code class='verb'>/proc/meminfo</code></span>____________________________________.
 </p><!-- l. 1191 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1193 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1195 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1199 --><p class='noindent'>
 <a id='x1-160r40'></a>
 </p><!-- l. 1199 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.40  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_DUMP_HUGEPAGES"</span>
@@ -1113,10 +1152,14 @@ This occurs during the handling of signals, and when <span class='ptmri7t-x-x-10
 <a id='Q1-1-0'></a>
 </p><!-- l. 1204 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= &lt;id&gt; ’,’ &lt;double&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>double ::= &lt;double_part&gt; | ’double_part’ ’.’ &lt;double_part&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>double_part ::= &lt;digit_0&gt; | &lt;double_part&gt; &lt;digit_0&gt;</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit_0 ::= ’0’ | ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>id = &lt;integer&gt; | ’-1’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>integer ::= &lt;digit&gt; | &lt;integer&gt; &lt;digit&gt; | &lt;integer&gt; ’0’</code></span><br class='newline' /><span class='obeylines-h'><code class='verb'>digit ::= ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’</code></span>
 </p><!-- l. 1213 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-162r2'></a>
 </p><!-- l. 1213 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.40.2  Purpose</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 1215 --><p class='noindent'>Specifies whether  should be dumped or not. This is a developer option.
+</p><!-- l. 1215 --><p class='noindent'>Specifies whether ________________________________________________________________ should be dumped or not. This is a developer
+option.
 </p><!-- l. 1218 --><p class='noindent'>
 <a id='x1-163r3'></a>
 </p><!-- l. 1218 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.40.3  Notes</span>
@@ -1135,14 +1178,18 @@ This occurs during the handling of signals, and when <span class='ptmri7t-x-x-10
 </p><!-- l. 1234 --><p class='noindent'>Hugepage dumping can occur when handling a signal or entering a <span class='ptmri7t-x-x-109'>DrHook </span>region.
 </p><!-- l. 1236 --><p class='noindent'><span class='obeylines-h'><code class='verb'>/proc/buddyinfo</code></span> and <span class='obeylines-h'><code class='verb'>/proc/meminfo</code></span> can also be dumped with hugepages, if
 <a href='#x1-152r38'><span class='pcrr7t-x-x-109'>"DR_HOOK_DUMP_BUDDYINFO"</span></a> and <a href='#x1-156r39'><span class='pcrr7t-x-x-109'>"DR_HOOK_DUMP_MEMINFO"</span></a> are enabled respectively.
-</p><!-- l. 1238 --><p class='noindent'>The dumping of hugepages is handled by ec_meminfo.
+</p><!-- l. 1238 --><p class='noindent'>The dumping of hugepages is handled by ec_meminfo. _____________________________________________________________________________
 </p><!-- l. 1240 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0,0</code></span>.
+</p><!-- l. 1242 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1246 --><p class='noindent'>
 <a id='x1-164r41'></a>
 </p><!-- l. 1246 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.41  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_GENCORE"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1249 --><p class='noindent'>
 <a id='x1-165r1'></a>
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1249 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.41.1  Valid Values</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1251 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
@@ -1157,10 +1204,8 @@ This occurs during the handling of signals, and when <span class='ptmri7t-x-x-10
 <a id='Q1-1-0'></a>
 </p><!-- l. 1261 --><p class='noindent'>Any non-zero valid integer value will be treated as <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1263 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1265 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1269 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-168r42'></a>
 </p><!-- l. 1269 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.42  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_GENCORE_SIGNAL"</span>
 <a id='Q1-1-0'></a>
@@ -1182,7 +1227,11 @@ This occurs during the handling of signals, and when <span class='ptmri7t-x-x-10
 </p><!-- l. 1285 --><p class='noindent'>To be valid then it must be <span class='zptmcm7t-x-x-109'>1 </span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>signal</code></span><span class='zptmcm7y-x-x-109'>≤</span><span class='obeylines-h'><code class='verb'>NSIG</code></span>, and not equal to <span class='obeylines-h'><code class='verb'>SIGABRT</code></span>. <span class='obeylines-h'><code class='verb'>NSIG</code></span> and <span class='obeylines-h'><code class='verb'>SIGABRT</code></span> are defined
 in <span class='ptmri7t-x-x-109'>signal.h </span>and are system dependant.
 </p><!-- l. 1287 --><p class='noindent'>All invalid values will be silently discarded.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1289 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>, which causes it to be ignored.
+</p><!-- l. 1291 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1295 --><p class='noindent'>
 <a id='x1-172r43'></a>
 </p><!-- l. 1295 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.43  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_STRICT_REGIONS"</span>
@@ -1198,9 +1247,6 @@ in <span class='ptmri7t-x-x-109'>signal.h </span>and are system dependant.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1305 --><p class='noindent'>Specifies if <span class='ptmri7t-x-x-109'>DrHook </span>region entry and exit calls must use the same label.
 </p><!-- l. 1308 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-175r3'></a>
 </p><!-- l. 1308 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.43.3  Notes</span>
 <a id='Q1-1-0'></a>
@@ -1221,6 +1267,9 @@ given.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1323 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’</code></span>
 </p><!-- l. 1326 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-178r2'></a>
 </p><!-- l. 1326 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.44.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -1230,16 +1279,13 @@ given.
 </p><!-- l. 1331 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.44.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1333 --><p class='noindent'>Enables Nvidia’s  <a href='https://github.com/NVIDIA/NVTX'>NVTX</a> at runtime. This assumes that NVTX has been enabled and requested at compile time
-of <span class='ptmri7t-x-x-109'>DrHook </span>using <span class='pcrr7t-x-x-109'>"ENABLEDR_HOOK_NVTX"</span>.
+of <span class='ptmri7t-x-x-109'>DrHook </span>using _________________________________________________________________________________________<span class='pcrr7t-x-x-109'>"ENABLEDR_HOOK_NVTX"</span>.
 </p><!-- l. 1335 --><p class='noindent'>If <a href='#x1-176r44'><span class='pcrr7t-x-x-109'>"DR_HOOK_NVTX"</span></a> is enabled, then <a href='#x1-172r43'><span class='pcrr7t-x-x-109'>"DR_HOOK_STRICT_REGIONS"</span></a> will also be enabled. It will also
 enable <span class='obeylines-h'><code class='verb'>walltime</code></span> and <span class='obeylines-h'><code class='verb'>count</code></span> from <a href='#x1-188r47'><span class='pcrr7t-x-x-109'>"DR_HOOK_OPT"</span></a>.
 </p><!-- l. 1337 --><p class='noindent'>Setting <span class='pcrr7t-x-x-109'>"DR_HOOK_TIMELINE" </span>to a non-zero value also causes <span class='ptmri7t-x-x-109'>DrHook </span>to check the following options:
 </p>
      <ul class='itemize1'>
      <li class='itemize'><a href='#x1-180r45'><span class='pcrr7t-x-x-109'>DR_HOOK_NVTX_SPAM_CALL_COUNT</span></a>
-                                                                                       
-
-                                                                                       
      </li>
      <li class='itemize'><a href='#x1-184r46'><span class='pcrr7t-x-x-109'>DR_HOOK_NVTX_SPAM_WT</span></a></li></ul>
 <!-- l. 1343 --><p class='noindent'>Any non-zero valid integer value will be treated as <span class='obeylines-h'><code class='verb'>1</code></span>.
@@ -1258,6 +1304,9 @@ enable <span class='obeylines-h'><code class='verb'>walltime</code></span> and <
 <a id='x1-182r2'></a>
 </p><!-- l. 1358 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.45.2  Purpose</span>
 <a id='Q1-1-0'></a>
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1360 --><p class='noindent'>Specifies the spam call count for NVTX.
 </p><!-- l. 1363 --><p class='noindent'>
 <a id='x1-183r3'></a>
@@ -1274,9 +1323,6 @@ sufficient runtime to satisfy <a href='#x1-184r46'><span class='pcrr7t-x-x-109'>
 </p><!-- l. 1373 --><p class='noindent'>If this option isn’t specified, then it will default to the definition of <span class='obeylines-h'><code class='verb'>nvtx_SCC_default</code></span>.
 </p><!-- l. 1377 --><p class='noindent'>
 <a id='x1-184r46'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 1377 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.46  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_NVTX_SPAM_WT"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1380 --><p class='noindent'>
@@ -1297,6 +1343,9 @@ sufficient runtime to satisfy <a href='#x1-184r46'><span class='pcrr7t-x-x-109'>
 functionality after exceeding <a href='#x1-180r45'><span class='pcrr7t-x-x-109'>DR_HOOK_NVTX_SPAM_CALL_COUNT</span></a>. It will not skip core <span class='ptmri7t-x-x-109'>DrHook</span>
 profiling.
 </p><!-- l. 1396 --><p class='noindent'>This option is only available if NVTX is enabled via <a href='#x1-176r44'><span class='pcrr7t-x-x-109'>"DR_HOOK_NVTX"</span></a>.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1398 --><p class='noindent'><a href='#x1-184r46'><span class='pcrr7t-x-x-109'>DR_HOOK_NVTX_SPAM_WT</span></a> is measured in seconds.
 </p><!-- l. 1400 --><p class='noindent'>A value less than <span class='obeylines-h'><code class='verb'>0</code></span> will be set to the definition of <span class='obeylines-h'><code class='verb'>nvtx_SWT_default</code></span>, typically <span class='obeylines-h'><code class='verb'>0.001</code></span>.
 </p><!-- l. 1402 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>double</code></span>.
@@ -1314,6 +1363,9 @@ profiling.
 </p><!-- l. 1440 --><p class='noindent'>
 <a id='x1-190r2'></a>
 </p><!-- l. 1440 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.47.2  Purpose</span>
+                                                                                       
+
+                                                                                       
 <a id='Q1-1-0'></a>
 </p><!-- l. 1443 --><p class='noindent'>Specifies a range of options relating to profiling parameters and outputs.
 </p><!-- l. 1446 --><p class='noindent'>
@@ -1328,9 +1380,6 @@ profiling.
           <li class='itemize'>Enables
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>heap</code></span>
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>stack</code></span>
           </li>
@@ -1347,6 +1396,9 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1462 --><p class='noindent'><span class='obeylines-h'><code class='verb'>memory</code></span></p>
@@ -1360,9 +1412,6 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>rss</code></span>
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
      </li>
@@ -1379,6 +1428,9 @@ profiling.
      </li>
      <li class='itemize'>
      <!-- l. 1478 --><p class='noindent'><span class='obeylines-h'><code class='verb'>heap</code></span></p>
+                                                                                       
+
+                                                                                       
           <ul class='itemize2'>
           <li class='itemize'>Implements
           </li>
@@ -1392,9 +1444,6 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
-                                                                                       
-
-                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1486 --><p class='noindent'><span class='obeylines-h'><code class='verb'>stack</code></span></p>
@@ -1411,6 +1460,9 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1494 --><p class='noindent'><span class='obeylines-h'><code class='verb'>rss</code></span></p>
@@ -1424,9 +1476,6 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
-                                                                                       
-
-                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1501 --><p class='noindent'><span class='obeylines-h'><code class='verb'>paging</code></span></p>
@@ -1437,13 +1486,16 @@ profiling.
           </li>
           <li class='itemize'>Also tracks the maximum number of pages allocated per <span class='ptmri7t-x-x-109'>DrHook </span>region.
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>Enables
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span>
           </li>
           <li class='itemize'>Increments any_memstat</li></ul>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1511 --><p class='noindent'><span class='obeylines-h'><code class='verb'>walltime</code></span></p>
@@ -1457,9 +1509,6 @@ profiling.
           <li class='itemize'>Enables
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span></li></ul>
-                                                                                       
-
-                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1519 --><p class='noindent'><span class='obeylines-h'><code class='verb'>cputime</code></span></p>
@@ -1476,6 +1525,9 @@ profiling.
           <li class='itemize'>Enables
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>count</code></span></li></ul>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1527 --><p class='noindent'><span class='obeylines-h'><code class='verb'>count</code></span></p>
@@ -1492,11 +1544,8 @@ profiling.
      <!-- l. 1533 --><p class='noindent'><span class='obeylines-h'><code class='verb'>memprof</code></span></p>
           <ul class='itemize2'>
           <li class='itemize'>Implements
-                                                                                       
-
-                                                                                       
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>unsure, seems to track memory being allocated and freed in regions, but can’t find where it’s
           called?
@@ -1510,6 +1559,9 @@ profiling.
           <li class='itemize'><span class='obeylines-h'><code class='verb'>stack</code></span>
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>rss</code></span>
+                                                                                       
+
+                                                                                       
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>paging</code></span>
           </li>
@@ -1524,13 +1576,10 @@ profiling.
           </li>
           <li class='itemize'>Tracks  two  statistics,  CPU  cycles  (<span class='pcrr7t-x-x-109'>cycles</span>)  and  walltime  (<span class='ptmri7t-x-x-109'>wallprof </span>)  for  each  <span class='ptmri7t-x-x-109'>DrHook</span>
           region.
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'>Also adds printing functions to <span class='pcrr7t-x-x-109'>atexit()</span>.
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>Enables
           </li>
@@ -1544,10 +1593,13 @@ profiling.
      </li>
      <li class='itemize'>
      <!-- l. 1559 --><p class='noindent'><span class='obeylines-h'><code class='verb'>cpuprof</code></span></p>
+                                                                                       
+
+                                                                                       
           <ul class='itemize2'>
           <li class='itemize'>Implements
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>seems to be something to do with cpu profiling and keyptr
           </li>
@@ -1556,9 +1608,6 @@ profiling.
           <li class='itemize'>Also adds printing functions to <span class='pcrr7t-x-x-109'>atexit()</span>.
           </li>
           <li class='itemize'>Enables
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'><span class='obeylines-h'><code class='verb'>cputime</code></span>
           </li>
@@ -1577,20 +1626,20 @@ profiling.
           subsequent space, e.g. ” Hello World!” becomes ”Hello”.
           </li>
           <li class='itemize'>Also converts <span class='ptmri7t-x-x-109'>DrHook </span>region names to upper case.</li></ul>
+                                                                                       
+
+                                                                                       
      </li>
      <li class='itemize'>
      <!-- l. 1581 --><p class='noindent'><span class='obeylines-h'><code class='verb'>self</code></span></p>
           <ul class='itemize2'>
           <li class='itemize'>Implements
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>Sets <span class='pcrr7t-x-x-109'>opt_self </span>to 2
           </li>
           <li class='itemize'>0 = Excludes <span class='pcrr7t-x-x-109'>DrHook </span>altogether.
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'>1 = Includes <span class='pcrr7t-x-x-109'>DrHook </span>in profiling, but doesn’t print it.
           </li>
@@ -1598,7 +1647,7 @@ profiling.
           </li>
           <li class='itemize'><span class='pcrr7t-x-x-109'>opt_self </span>defaults to 1
           </li>
-          <li class='itemize'></li></ul>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________</li></ul>
      </li>
      <li class='itemize'>
      <!-- l. 1594 --><p class='noindent'><span class='obeylines-h'><code class='verb'>noself</code></span></p>
@@ -1610,20 +1659,20 @@ profiling.
           <li class='itemize'>0 = Excludes <span class='pcrr7t-x-x-109'>DrHook </span>altogether.
           </li>
           <li class='itemize'>1 = Includes <span class='pcrr7t-x-x-109'>DrHook </span>in profiling, but doesn’t print it.
+                                                                                       
+
+                                                                                       
           </li>
           <li class='itemize'>2 = Includes <span class='pcrr7t-x-x-109'>DrHook </span>in profiling, also prints it.
           </li>
           <li class='itemize'><span class='pcrr7t-x-x-109'>opt_self </span>defaults to 1
           </li>
-          <li class='itemize'></li></ul>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________</li></ul>
      </li>
      <li class='itemize'>
      <!-- l. 1605 --><p class='noindent'><span class='obeylines-h'><code class='verb'>noprop</code></span></p>
           <ul class='itemize2'>
           <li class='itemize'>Implements
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'>Do not propagate handled signals beyond <span class='ptmri7t-x-x-109'>DrHook</span>.</li></ul>
      </li>
@@ -1632,7 +1681,7 @@ profiling.
           <ul class='itemize2'>
           <li class='itemize'>Implements
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>Just says ”# of data elements, bytes, etc”
           </li>
@@ -1642,10 +1691,13 @@ profiling.
      <!-- l. 1619 --><p class='noindent'><span class='obeylines-h'><code class='verb'>cluster</code></span></p>
           <ul class='itemize2'>
           <li class='itemize'>Implements
+                                                                                       
+
+                                                                                       
           </li>
           <li class='itemize'>Prints cluster ID and size.
           </li>
-          <li class='itemize'>
+          <li class='itemize'>___________________________________________________________________________________________________________________________________________________
           </li>
           <li class='itemize'>seems to be related to process &amp; threads. i.e. (processID, thread count)</li></ul>
      </li>
@@ -1653,9 +1705,6 @@ profiling.
      <!-- l. 1627 --><p class='noindent'><span class='obeylines-h'><code class='verb'>callpath</code></span></p>
           <ul class='itemize2'>
           <li class='itemize'>Implements
-                                                                                       
-
-                                                                                       
           </li>
           <li class='itemize'>Enables callpath mode and associated arguments.
           </li>
@@ -1666,7 +1715,8 @@ profiling.
           <li class='itemize'>By    default,    this    is    to    a    max    depth    of    50,    but    can    be    changed    by
           <a href='#x1-196r49'><span class='pcrr7t-x-x-109'>"DR_HOOK_CALLPATH_DEPTH"</span></a>.</li></ul>
      </li></ul>
-<!-- l. 1642 --><p class='noindent'>
+<!-- l. 1638 --><p class='noindent'>_______________________________________________________________________________________
+</p><!-- l. 1642 --><p class='noindent'>
 <a id='x1-192r48'></a>
 </p><!-- l. 1642 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.48  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_CALLPATH_INDENT"</span>
 <a id='Q1-1-0'></a>
@@ -1676,6 +1726,9 @@ profiling.
 <a id='Q1-1-0'></a>
 </p><!-- l. 1647 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ </code></span><br class='newline' />
 </p><!-- l. 1650 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-194r2'></a>
 </p><!-- l. 1650 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.48.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -1688,10 +1741,8 @@ profiling.
 </p><!-- l. 1659 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_CALLPATH_INDENT" </span>is less than 1 or greater than 8, then it will be set to
 <span class='obeylines-h'><code class='verb'>callpath_indent_default</code></span>, which evaluates to <span class='obeylines-h'><code class='verb'>2</code></span>.
 </p><!-- l. 1661 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>callpath_indent_default</code></span>.
+</p><!-- l. 1663 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1667 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-196r49'></a>
 </p><!-- l. 1667 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.49  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_CALLPATH_DEPTH"</span>
 <a id='Q1-1-0'></a>
@@ -1714,8 +1765,12 @@ profiling.
 memory overhead of <span class='ptmri7t-x-x-109'>DrHook</span>.
 </p><!-- l. 1687 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
 </p><!-- l. 1689 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_CALLPATH_DEPTH" </span>is less than 0, then it will be set to <span class='obeylines-h'><code class='verb'>callpath_depth_default</code></span>,
+                                                                                       
+
+                                                                                       
 which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>. A size of zero will only print the first <span class='ptmri7t-x-x-109'>DrHook </span>region in the callpath.
 </p><!-- l. 1691 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>callpath_depth_default</code></span>—.
+</p><!-- l. 1693 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1697 --><p class='noindent'>
 <a id='x1-200r50'></a>
 </p><!-- l. 1697 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.50  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_CALLPATH_PACKED"</span>
@@ -1727,9 +1782,6 @@ which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>
 </p><!-- l. 1702 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’ </code></span><br class='newline' />
 </p><!-- l. 1705 --><p class='noindent'>
 <a id='x1-202r2'></a>
-                                                                                       
-
-                                                                                       
 </p><!-- l. 1705 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.50.2  Purpose</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1707 --><p class='noindent'>Outputs callpath information in a more compact format.
@@ -1740,6 +1792,7 @@ which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>
 </p><!-- l. 1712 --><p class='noindent'>This will only be enabled if <a href='#x1-188r47'><span class='pcrr7t-x-x-109'>"DR_HOOK_OPT"</span></a> has <span class='pcrr7t-x-x-109'>’CALLPATH’ </span>set.
 </p><!-- l. 1714 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1716 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1718 --><p class='noindent'>___________________________________________ ___________________________________________________________________________________
 </p><!-- l. 1723 --><p class='noindent'>
 <a id='x1-204r51'></a>
 </p><!-- l. 1723 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.51  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_CALLTRACE"</span>
@@ -1749,6 +1802,9 @@ which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>
 </p><!-- l. 1726 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.51.1  Valid Values</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1728 --><p class='noindent'><span class='obeylines-h'><code class='verb'>valid_value ::= ’0’ | ’1’ </code></span><br class='newline' />
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1731 --><p class='noindent'>
 <a id='x1-206r2'></a>
 </p><!-- l. 1731 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.51.2  Purpose</span>
@@ -1759,16 +1815,15 @@ which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>
 </p><!-- l. 1736 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.51.3  Notes</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1738 --><p class='noindent'>This will only be enabled if <a href='#x1-188r47'><span class='pcrr7t-x-x-109'>"DR_HOOK_OPT"</span></a> has <span class='pcrr7t-x-x-109'>’CALLPATH’ </span>set.
+</p><!-- l. 1740 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1742 --><p class='noindent'>Any non-zero valid integer value will be set to <span class='obeylines-h'><code class='verb'>1</code></span>.
 </p><!-- l. 1744 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>0</code></span>.
+</p><!-- l. 1746 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 1750 --><p class='noindent'>
 <a id='x1-208r52'></a>
 </p><!-- l. 1750 --><p class='noindent' id='aa'><span class='ptmb7t-x-x-120'>2.52  </span><span class='pcrb7t-x-x-120'>"DR_HOOK_WATCH_PRINT_MAX"</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 1753 --><p class='noindent'>
-                                                                                       
-
-                                                                                       
 <a id='x1-209r1'></a>
 </p><!-- l. 1753 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>2.52.1  Valid Values</span>
 <a id='Q1-1-0'></a>
@@ -1785,7 +1840,11 @@ which evaluates to <span class='obeylines-h'><code class='verb'>50</code></span>
 </p><!-- l. 1766 --><p class='noindent'>If <span class='pcrr7t-x-x-109'>"DR_HOOK_WATCH_PRINT_MAX" </span>is greater or equal to 0, and less than the number of elements, then the
 number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATCH_PRINT_MAX" </span>will be printed.
 </p><!-- l. 1768 --><p class='noindent'>The size is limited to the size of <span class='obeylines-h'><code class='verb'>int</code></span>.
+                                                                                       
+
+                                                                                       
 </p><!-- l. 1770 --><p class='noindent'>If this option isn’t specified, then it will default to <span class='obeylines-h'><code class='verb'>-1</code></span>.
+</p><!-- l. 1772 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 34 --><p class='noindent'>
                                                                                        
 
@@ -1806,7 +1865,8 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 <a id='x1-215r2'></a>
 </p><!-- l. 10 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.1.2  Purpose</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 12 --><p class='noindent'>Never used within <span class='pcrr7t-x-x-109'>drhook.c</span>
+</p><!-- l. 12 --><p class='noindent'>_______________________________________________________________________ Never used within
+<span class='pcrr7t-x-x-109'>drhook.c</span>
 </p><!-- l. 15 --><p class='noindent'>
 <a id='x1-216r3'></a>
 </p><!-- l. 15 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.1.3  Preprocessor Guards</span>
@@ -1825,11 +1885,11 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 <a id='x1-219r2'></a>
 </p><!-- l. 28 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.2.2  Purpose</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 30 --><p class='noindent'>Used within error handling to specify the source file where it occurred.
-</p><!-- l. 33 --><p class='noindent'>
                                                                                        
 
                                                                                        
+</p><!-- l. 30 --><p class='noindent'>Used within error handling to specify the source file where it occurred.
+</p><!-- l. 33 --><p class='noindent'>
 <a id='x1-220r3'></a>
 </p><!-- l. 33 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.2.3  Preprocessor Guards</span>
 <a id='Q1-1-0'></a>
@@ -1847,7 +1907,8 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 <a id='x1-223r2'></a>
 </p><!-- l. 46 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.3.2  Purpose</span>
 <a id='Q1-1-0'></a>
-</p><!-- l. 48 --><p class='noindent'>Never used within <span class='pcrr7t-x-x-109'>drhook.c</span>
+</p><!-- l. 48 --><p class='noindent'>_______________________________________________________________________ Never used within
+<span class='pcrr7t-x-x-109'>drhook.c</span>
 </p><!-- l. 51 --><p class='noindent'>
 <a id='x1-224r3'></a>
 </p><!-- l. 51 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.3.3  Preprocessor Guards</span>
@@ -1863,13 +1924,13 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 <a id='Q1-1-0'></a>
 </p><!-- l. 61 --><p class='noindent'><span class='obeylines-h'><code class='verb'>_POSIX_HOST_NAME_MAX</code></span>
 </p><!-- l. 64 --><p class='noindent'>
+                                                                                       
+
+                                                                                       
 <a id='x1-227r2'></a>
 </p><!-- l. 64 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.4.2  Purpose</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 66 --><p class='noindent'>Used to set the max size of char arrays for node HOSTNAME
-                                                                                       
-
-                                                                                       
 </p><!-- l. 69 --><p class='noindent'>
 <a id='x1-228r3'></a>
 </p><!-- l. 69 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.4.3  Preprocessor Guards</span>
@@ -1903,10 +1964,10 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 </p><!-- l. 95 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.6.1  Value</span>
 <a id='Q1-1-0'></a>
 </p><!-- l. 97 --><p class='noindent'><span class='obeylines-h'><code class='verb'>HOST_NAME_MAX</code></span>
-</p><!-- l. 100 --><p class='noindent'>
                                                                                        
 
                                                                                        
+</p><!-- l. 100 --><p class='noindent'>
 <a id='x1-235r2'></a>
 </p><!-- l. 100 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>3.6.2  Purpose</span>
 <a id='Q1-1-0'></a>
@@ -1981,6 +2042,7 @@ number of elements up to the value of <span class='pcrr7t-x-x-109'>"DR_HOOK_WATC
 <a id='x1-249r3'></a>
 </p><!-- l. 33 --><p class='noindent' id='aa'><span class='ptmri7t-x-x-109'>4.2.3  Purpose</span>
 <a id='Q1-1-0'></a>
+</p><!-- l. 35 --><p class='noindent'>_______________________________________________________________________________________
 </p><!-- l. 38 --><p class='noindent'>
                                                                                        
 
